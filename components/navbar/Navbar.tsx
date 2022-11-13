@@ -2,18 +2,23 @@ import { BsMoon } from "react-icons/bs";
 
 function Navbar() {
   return (
-    <nav className="container flex pt-8 items-center p-24">
-      <div className="flex flex-1 items-center gap-7">
+    <nav className="container flex pt-10 items-center">
+      <div className="flex flex-1 items-center gap-5">
         <img src="/logo96.png" alt="XO game logo" className="w-16" />
-        <p className="text-black font-bold leading-4 text-lg font-inter">
+        <p className="text-gray-800 font-bold leading-5 text-lg font-inter">
           Tic Tac Toe <br />
           (XO) game
         </p>
       </div>
-      <div className="flex gap-8">
-        <button className="flex-1 border border-primary-light px-5 py-1 rounded-lg text-texts-light hover:shadow-md font-inter">
+      {/* /* --------------------------------- Buttons -------------------------------- */}
+      <div className="flex flex-1 gap-6 justify-end">
+        <button className=" border border-primary-light px-5 py-1 rounded-lg text-texts-light hover:shadow-md font-inter">
           About
         </button>
+
+        {/* <button className="px-5 py-1 bg-secondary-light rounded-lg text-texts-light font-inter border border-borders">
+          Reset
+        </button> */}
         <div className="flex w-10 h-10 rounded-full border border-borders justify-center items-center bg-secondary-light cursor-pointer hover:shadow-md">
           <BsMoon className="text-xl text-texts-light" />
         </div>
