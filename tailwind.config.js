@@ -13,21 +13,13 @@ module.exports = {
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        light: "radial-gradient(50% 50% at 50% 50%, #8AE8CC 0%, #EEEEEE 100%);",
+        dark: "radial-gradient(50% 50% at 50% 50%, #021B0F 0%, #000517 100%)",
       },
       colors: {
         primary: {
           light: "#00976A",
           dark: "#4EBE86",
-        },
-        backgrounds: {
-          light: {
-            end: "#eeeeee",
-            start: "#8AE8CC",
-          },
-          dark: {
-            end: "#000517",
-            start: "#021B0F",
-          },
         },
         secondary: {
           light: "rgb(0,0,0,5%)",
