@@ -3,7 +3,7 @@ import Navbar from "../components/navbar/Navbar";
 
 export default function Home() {
   return (
-    <div className="bg-light h-screen overflow-hidden">
+    <div className="bg-light h-screen overflow-hidden font-inter">
       <Head>
         <title>XO game</title>
         <meta name="description" content="XO game" />
@@ -11,24 +11,32 @@ export default function Home() {
       </Head>
       <Navbar />
       <main className="flex h-4/6 justify-center items-center">
-        <div className="flex flex-col justify-center items-center border border-borders rounded-2xl py-12 px-10 w-2/5 backdrop-blur-sm">
-          <div className="flex gap-3  ">
+        <div className="flex flex-col gap-5 justify-center items-center bg-secondary-light border border-borders rounded-2xl py-12 px-10 w-2/5 backdrop-blur-sm">
+          <div className="flex gap-3">
             <img
               src="./images/waving-hand-emoji.png"
               alt="greetings to the users"
-              className="w-10"
+              className="w-10 hover:-rotate-6 duration-300 hover:scale-110 "
             />
-            <h2 className="text-4xl">Hi</h2>
+            <h2 className="text-4xl font-bold text-texts-light">Hi</h2>
+          </div>
+          <div className="text-texts-light text-center text-xl ">
+            <p className="tracking-widest font-light">welcome to XO game</p>
+            <p className="font-medium">please enter your name:</p>
           </div>
           <div>
-            <p>welcome to XO game</p>
-            <p>please enter your name:</p>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="enter your name here"
+              className="bg-secondary-light outline-none  px-5 py-2 border border-primary-light focus:border-2 focus:shadow-md text-center rounded-lg text-lg text-texts-light"
+            />
           </div>
           <div>
-            <input type="button" value="enter your name here" />
-          </div>
-          <div>
-            <button>Submit</button>
+            <button className="bg-primary-light text-white font-medium px-6 shadow-md hover:shadow-lg text-lg py-2 rounded-lg hover:scale-105 duration-300 transition">
+              Submit
+            </button>
           </div>
         </div>
       </main>
