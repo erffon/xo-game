@@ -1,7 +1,13 @@
 import Head from "next/head";
+import { useEffect, useState } from "react";
 import Navbar from "../components/navbar/Navbar";
 
 export default function Home() {
+  const [inputValue, setInputValue] = useState("");
+  const saveName = (e: any) => {
+    window.localStorage.setItem("name", inputValue);
+    console.log(inputValue);
+  };
   return (
     <div className="bg-light h-screen overflow-hidden font-inter">
       <Head>
@@ -9,7 +15,7 @@ export default function Home() {
         <meta name="description" content="XO game" />
         <link rel="icon" href="/xo.ico" />
       </Head>
-      <Navbar />
+      <Navbar isHome={true} />
       <main className="flex h-4/6 justify-center items-center">
         <div className="flex flex-col gap-5 justify-center items-center bg-secondary-light border border-borders rounded-2xl py-12 px-10 w-2/5 backdrop-blur-sm">
           <div className="flex gap-3">
@@ -26,6 +32,7 @@ export default function Home() {
           </div>
           <div>
             <input
+              onChange={(e) => setInputValue(e.target.value)}
               type="text"
               name="name"
               id="name"
@@ -34,7 +41,11 @@ export default function Home() {
             />
           </div>
           <div>
-            <button className="bg-primary-light text-white font-medium px-6 shadow-md hover:shadow-lg text-lg py-2 rounded-lg hover:scale-105 duration-300 transition">
+            <button
+              onClick={saveName}
+              type="submit"
+              className="bg-primary-light text-white font-medium px-6 shadow-md hover:shadow-lg text-lg py-2 rounded-lg hover:scale-105 duration-300 transition"
+            >
               Submit
             </button>
           </div>
