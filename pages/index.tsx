@@ -23,7 +23,7 @@ export default function Home() {
       </Head>
       <Navbar isHome={true} />
       <main className="flex h-4/6 justify-center items-center">
-        <Container>
+        <Container className="flex flex-col gap-5 py-12 px-10 w-2/5 justify-center items-center">
           <div className="flex gap-3">
             <img
               src="./images/waving-hand-emoji.png"

@@ -4,7 +4,7 @@ const Playground = () => {
   return (
     <>
       <Navbar />
-      <p>playground</p>
+      <div></div>
     </>
   );
 };
