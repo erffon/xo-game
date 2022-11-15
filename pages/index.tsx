@@ -1,13 +1,18 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import Navbar from "../components/navbar/Navbar";
 import Container from "../components/Ui/Container";
 
 export default function Home() {
   const [inputValue, setInputValue] = useState("");
+  const { push } = useRouter();
+
   const saveName = (e: any) => {
-    window.localStorage.setItem("name", inputValue);
-    console.log(inputValue);
+    if (!!inputValue) {
+      window.localStorage.setItem("name", inputValue);
+      push("/playground");
+    }
   };
   return (
     <div className="bg-light h-screen overflow-hidden font-inter">
@@ -44,7 +49,7 @@ export default function Home() {
           <div>
             <button
               onClick={saveName}
-              type="submit"
+              type="button"
               className="bg-primary-light text-white font-medium px-6 shadow-md hover:shadow-lg text-lg py-2 rounded-lg hover:scale-105 duration-300 transition"
             >
               Submit
