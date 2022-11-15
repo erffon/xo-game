@@ -1,12 +1,11 @@
 import React, { ReactNode } from "react";
 
-const Container = ({
-  children,
-  className,
-}: {
+interface ContainerProps {
   children: ReactNode;
-  className: string;
-}): JSX.Element => {
+  className?: string;
+}
+
+const Container = ({ children, className }: ContainerProps): JSX.Element => {
   return (
     <div
       className={`bg-secondary-light border border-borders rounded-2xl  backdrop-blur-sm ${className}`}
