@@ -1,6 +1,7 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Navbar from "../components/navbar/Navbar";
+import Container from "../components/Ui/Container";
 
 export default function Home() {
   const [inputValue, setInputValue] = useState("");
@@ -17,7 +18,7 @@ export default function Home() {
       </Head>
       <Navbar isHome={true} />
       <main className="flex h-4/6 justify-center items-center">
-        <div className="flex flex-col gap-5 justify-center items-center bg-secondary-light border border-borders rounded-2xl py-12 px-10 w-2/5 backdrop-blur-sm">
+        <Container>
           <div className="flex gap-3">
             <img
               src="./images/waving-hand-emoji.png"
@@ -49,7 +50,7 @@ export default function Home() {
               Submit
             </button>
           </div>
-        </div>
+        </Container>
       </main>
     </div>
   );
