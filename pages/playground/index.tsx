@@ -3,16 +3,28 @@ import Container from "../../components/Ui/Container";
 import { BiCircle, BiX } from "react-icons/bi";
 
 const Playground = () => {
-  const tiles = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+  const defaultTiles = [1, 2, 0, 0, 0, 0, 0, 0, 0];
   return (
     <div className="bg-light h-screen overflow-hidden">
       <Navbar />
       <div className="container">
         <div className="flex flex-row flex-wrap mt-10 justify-center items-center gap-5 px-80">
-          {tiles.map((item) => {
+          {defaultTiles.map((item) => {
+            let result;
+            switch (item) {
+              case 1:
+                result = <BiCircle />;
+                break;
+              case 2:
+                result = <BiX />;
+                break;
+              default:
+                result = "";
+                break;
+            }
             return (
               <Container className="flex justify-center items-center w-24 h-24">
-                {item}
+                {result}
               </Container>
             );
           })}
