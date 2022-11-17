@@ -23,7 +23,13 @@ const Playground = () => {
                 break;
             }
             return (
-              <Container className="flex justify-center items-center w-24 h-24 hover:border-2">
+              <Container
+                className={`flex justify-center items-center w-24 h-24 ${
+                  item == 0
+                    ? "hover:border-2 hover:shadow-sm active:border-redish active:border-4"
+                    : ""
+                }`}
+              >
                 {result}
               </Container>
             );
