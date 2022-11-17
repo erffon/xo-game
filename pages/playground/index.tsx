@@ -13,17 +13,17 @@ const Playground = () => {
             let result;
             switch (item) {
               case 1:
-                result = <BiCircle />;
+                result = <BiCircle className="text-6xl text-redish" />;
                 break;
               case 2:
-                result = <BiX />;
+                result = <BiX className="text-8xl text-primary-light" />;
                 break;
               default:
                 result = "";
                 break;
             }
             return (
-              <Container className="flex justify-center items-center w-24 h-24">
+              <Container className="flex justify-center items-center w-24 h-24 hover:border-2">
                 {result}
               </Container>
             );
