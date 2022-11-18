@@ -3,10 +3,10 @@ import Container from "../../components/Ui/Container";
 import { BiCircle, BiX } from "react-icons/bi";
 import { useState } from "react";
 import { calculateWinner } from "./CalculateWinner";
+import Board from "./Board";
 
 const Playground = () => {
-  const resultTiles = [1, 2, 0, 0, 0, 0, 0, 0, 0];
-  const [history, setHistory] = useState([Array(9).fill(null)]);
+  const [history, setHistory] = useState<[number[]]>([Array(9).fill(null)]);
   const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXisNext] = useState(true);
   const winner = calculateWinner(history[stepNumber]);
