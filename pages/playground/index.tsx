@@ -1,9 +1,30 @@
 import Navbar from "../../components/navbar/Navbar";
 import Container from "../../components/Ui/Container";
 import { BiCircle, BiX } from "react-icons/bi";
+import { useState } from "react";
+import { calculateWinner } from "./CalculateWinner";
 
 const Playground = () => {
   const resultTiles = [1, 2, 0, 0, 0, 0, 0, 0, 0];
+  const [history, setHistory] = useState([Array(9).fill(null)]);
+  const [stepNumber, setStepNumber] = useState(0);
+  const [xIsNext, setXisNext] = useState(true);
+  const winner = calculateWinner(history[stepNumber]);
+  const xO = xIsNext ? "X" : "O";
+
+  const handleClick = (i) => {
+    const historyPoint = history.slice(0, stepNumber + 1);
+    const current = historyPoint[stepNumber];
+    const squares = [...current];
+    // return if won or occupied
+    if (winner || squares[i]) return;
+    // select square
+    squares[i] = xO;
+    setHistory([...historyPoint, squares]);
+    setStepNumber(historyPoint.length);
+    setXisNext(!xIsNext);
+  };
+
   return (
     <div className="bg-light h-screen overflow-hidden">
       <Navbar />
