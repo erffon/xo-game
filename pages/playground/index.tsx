@@ -3,13 +3,13 @@ import Container from "../../components/Ui/Container";
 import { BiCircle, BiX } from "react-icons/bi";
 
 const Playground = () => {
-  const defaultTiles = [1, 2, 0, 0, 0, 0, 0, 0, 0];
+  const resultTiles = [1, 2, 0, 0, 0, 0, 0, 0, 0];
   return (
     <div className="bg-light h-screen overflow-hidden">
       <Navbar />
       <div className="container">
         <div className="flex flex-row flex-wrap mt-10 justify-center items-center gap-5 px-80">
-          {defaultTiles.map((item) => {
+          {resultTiles.map((item) => {
             let result;
             switch (item) {
               case 1:
