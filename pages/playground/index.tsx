@@ -8,11 +8,19 @@ const Game = () => {
   const [xIsNext, setXIsNext] = useState(true);
   const winner = calculateWinner(board);
 
-  const handleClick = () => {};
+  const handleClick = (i) => {
+    const boardCopy = [...board];
+    //if occupied cell selected or someone won the game
+    if (winner || boardCopy[i]) return;
+    //put x & o in cells
+    boardCopy[i] = xIsNext ? "X" : "O";
+    setBoard(boardCopy);
+    setXIsNext(!xIsNext);
+  };
   const jumpTo = () => {};
   const renderMoves = () => {};
 
-  return <Board onClick={handleClick} />;
+  return <Board onClick={handleClick} squares={board} />;
 };
 
 export default Game;
