@@ -4,13 +4,7 @@ const Board = ({ squares, onClick }) => {
   return (
     <div>
       {squares.map((square, i) => {
-        return (
-          <Square
-            value={square}
-            key={i}
-            onClick={() => onClick("hello test")}
-          />
-        );
+        return <Square value={square} key={i} onClick={() => onClick(i)} />;
       })}
     </div>
   );
