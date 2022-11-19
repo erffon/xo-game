@@ -6,7 +6,11 @@ import React from "react";
 // }
 
 const Square = ({ value, onClick }) => {
-  return <button onClick={onClick}>{value}</button>;
+  return (
+    <button className="mx-2 px-1 bg-slate-300" onClick={onClick}>
+      {value}
+    </button>
+  );
 };
 
 export default Square;

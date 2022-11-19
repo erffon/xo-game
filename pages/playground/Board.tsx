@@ -3,11 +3,17 @@ import Square from "./Square";
 
 const Board = ({ squares, onClick }) => {
   return (
-    <Container>
-      {squares.map((square: number, i: number) => (
-        <Square key={i} value={square} onClick={() => onClick(i)} />
-      ))}
-    </Container>
+    <div>
+      <Square className="px-3" value="1" onClick={() => onClick("test")} />
+      <Square className="px-3" value="2" onClick={() => onClick("test")} />
+      <Square className="px-3" value="3" onClick={() => onClick("test")} />
+      <Square className="px-3" value="4" onClick={() => onClick("test")} />
+      <Square className="px-3" value="5" onClick={() => onClick("test")} />
+      <Square className="px-3" value="6" onClick={() => onClick("test")} />
+      <Square className="px-3" value="7" onClick={() => onClick("test")} />
+      <Square className="px-3" value="8" onClick={() => onClick("test")} />
+      <Square className="px-3" value="9" onClick={() => onClick("test")} />
+    </div>
   );
 };
 
