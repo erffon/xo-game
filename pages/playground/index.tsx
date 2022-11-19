@@ -1,12 +1,9 @@
-import Navbar from "../../components/navbar/Navbar";
-import Container from "../../components/Ui/Container";
-import { BiCircle, BiX } from "react-icons/bi";
-import { useState } from "react";
+import React, { useState } from "react";
 import { calculateWinner } from "./CalculateWinner";
 import Board from "./Board";
 
-const Playground = () => {
-  const [history, setHistory] = useState<[number[]]>([Array(9).fill(null)]);
+const Game = () => {
+  const [history, setHistory] = useState([Array(9).fill(null)]);
   const [stepNumber, setStepNumber] = useState(0);
   const [xIsNext, setXisNext] = useState(true);
   const winner = calculateWinner(history[stepNumber]);
@@ -25,6 +22,21 @@ const Playground = () => {
     setXisNext(!xIsNext);
   };
 
+  const jumpTo = (step) => {
+    setStepNumber(step);
+    setXisNext(step % 2 === 0);
+  };
+
+  const renderMoves = () =>
+    history.map((_step, move) => {
+      const destination = move ? `Go to move #${move}` : "Go to Start";
+      return (
+        <li key={move}>
+          <button onClick={() => jumpTo(move)}>{destination}</button>
+        </li>
+      );
+    });
+
   return (
     <>
       <h1>React Tic Tac Toe - With Hooks</h1>
@@ -32,6 +44,7 @@ const Playground = () => {
       <div className="info-wrapper">
         <div>
           <h3>History</h3>
+          {renderMoves()}
         </div>
         <h3>{winner ? "Winner: " + winner : "Next Player: " + xO}</h3>
       </div>
@@ -39,4 +52,4 @@ const Playground = () => {
   );
 };
 
-export default Playground;
+export default Game;

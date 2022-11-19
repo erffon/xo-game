@@ -1,12 +1,7 @@
 import Container from "../../components/Ui/Container";
+import Square from "./Square";
 
-const Board = ({
-  squares,
-  onClick,
-}: {
-  squares: number[];
-  onClick: MouseEvent;
-}) => {
+const Board = ({ squares, onClick }) => {
   return (
     <Container>
       {squares.map((square: number, i: number) => (
