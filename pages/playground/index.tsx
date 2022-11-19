@@ -1,7 +1,9 @@
+import { useState } from "react";
 import Board from "./Board";
 import Square from "./Square";
 
 const Game = () => {
+  const [board, setBoard] = useState(Array(9).fill(null));
   const handleClick = () => {};
   const jumpTo = () => {};
   const renderMoves = () => {};
