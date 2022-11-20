@@ -8,7 +8,9 @@ import React from "react";
 const Square = ({ value, onClick }) => {
   return (
     <button
-      className="mx-2 px-5 py-5 bg-slate-200 border-2 border-borders"
+      className={`w-24 h-24 bg-secondary-light border-borders border rounded-xl ${
+        !value ? "hover:border-2 hover:shadow-md" : ""
+      }`}
       onClick={onClick}
     >
       {value}

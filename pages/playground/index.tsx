@@ -18,12 +18,12 @@ const Game = () => {
   };
 
   return (
-    <>
+    <div className="bg-light h-screen">
       <Navbar />
       <div className="container py-24">
         <Board onClick={handleClick} squares={board} />
       </div>
-    </>
+    </div>
   );
 };
 
