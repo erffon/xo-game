@@ -1,8 +1,7 @@
 import { useState } from "react";
+import Navbar from "../../components/navbar/Navbar";
 import Board from "./Board";
-import Square from "./Square";
-import { calculateWinner } from "./CalculateWinner";
-
+import calculateWinner from "./CalculateWinner";
 const Game = () => {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
@@ -17,10 +16,15 @@ const Game = () => {
     setBoard(boardCopy);
     setXIsNext(!xIsNext);
   };
-  const jumpTo = () => {};
-  const renderMoves = () => {};
 
-  return <Board onClick={handleClick} squares={board} />;
+  return (
+    <>
+      <Navbar />
+      <div className="container py-24">
+        <Board onClick={handleClick} squares={board} />
+      </div>
+    </>
+  );
 };
 
 export default Game;

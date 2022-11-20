@@ -2,7 +2,7 @@ import Square from "./Square";
 
 const Board = ({ squares, onClick }) => {
   return (
-    <div>
+    <div className="grid grid-cols-3">
       {squares.map((square, i) => {
         return <Square value={square} key={i} onClick={() => onClick(i)} />;
       })}
