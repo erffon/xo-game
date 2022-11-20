@@ -3,12 +3,12 @@ import Navbar from "../../components/navbar/Navbar";
 import Board from "./Board";
 import calculateWinner from "./CalculateWinner";
 const Game = () => {
-  const [board, setBoard] = useState(Array(9).fill(null));
+  const [board, setBoard] = useState<string[]>(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
   const winner = calculateWinner(board);
 
-  const handleClick = (i) => {
-    const boardCopy = [...board];
+  const handleClick = (i: number) => {
+    const boardCopy: string[] = [...board];
     //if occupied cell selected or someone won the game
     if (winner || boardCopy[i]) return;
     //put x & o in cells
@@ -20,8 +20,18 @@ const Game = () => {
   return (
     <div className="bg-light h-screen">
       <Navbar />
-      <div className="container py-24">
+      <div className="container py-10">
         <Board onClick={handleClick} squares={board} />
+        <div className="flex justify-center gap-24 text-slate-400 text-center mt-16">
+          <div className="flex flex-col gap-1">
+            <p className="text-5xl font-inter font-medium">X</p>
+            <p className="text-2xl font-semibold">Player1</p>
+          </div>
+          <div className="flex flex-col gap-1">
+            <p className="text-5xl font-inter font-medium">O</p>
+            <p className="text-2xl font-semibold">Player2</p>
+          </div>
+        </div>
       </div>
     </div>
   );
