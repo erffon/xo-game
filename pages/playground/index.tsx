@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useState } from "react";
 import Navbar from "../../components/navbar/Navbar";
 import Board from "./Board";
@@ -6,11 +7,15 @@ const Game = () => {
   const [board, setBoard] = useState<string[]>(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
   const winner = calculateWinner(board);
+  const { push } = useRouter();
 
   const handleClick = (i: number) => {
     const boardCopy: string[] = [...board];
     //if occupied cell selected or someone won the game
-    if (winner || boardCopy[i]) return;
+    if (winner || boardCopy[i]) {
+      const winnerPlayer = xIsNext ? "Player2" : "Player1";
+      push(`/result?winner=${winnerPlayer}`);
+    }
     //put x & o in cells
     boardCopy[i] = xIsNext ? "X" : "O";
     setBoard(boardCopy);
