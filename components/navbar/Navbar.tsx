@@ -3,13 +3,13 @@ import { BsMoon } from "react-icons/bs";
 function Navbar({ isHome = false }: { isHome?: boolean }) {
   return (
     <nav className="container flex pt-10 items-center h-1/6 font-inter">
-      {/* <div className="flex flex-1 items-center gap-5">
+      <div className="flex flex-1 items-center gap-5">
         <img src="/logo96.png" alt="XO game logo" className="w-16" />
         <p className="text-gray-800 font-bold leading-5 text-lg font-inter">
           Tic Tac Toe <br />
           (XO) game
         </p>
-      </div> */}
+      </div>
       {/* /* --------------------------------- Buttons -------------------------------- */}
       <div className="flex flex-1 gap-6 justify-end">
         <button className=" border border-primary-light px-5 py-1 rounded-lg text-texts-light hover:shadow-md ">
