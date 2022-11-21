@@ -11,17 +11,25 @@ const Result = () => {
       <main className="flex h-4/6 justify-center items-center">
         <Container className="flex flex-col gap-5 py-12 px-10 w-2/5 justify-center items-center">
           <div className="flex gap-3">
+            <h2 className="text-4xl font-bold text-texts-light">Congrats</h2>
             <img
-              src="./images/waving-hand-emoji.png"
+              src="./images/partying-face-emoji.png"
               alt="greetings to the users"
-              className="w-10 hover:-rotate-6 duration-300 hover:scale-110 "
+              className="w-10 hover:-rotate-6 duration-300 hover:scale-125 mb-7"
             />
-            <h2 className="text-4xl font-bold text-texts-light">Hi</h2>
           </div>
-          <div className="text-texts-light text-center text-xl ">
-            <p className="tracking-widest font-light">welcome to XO game</p>
-            <p className="font-medium">please enter your name:</p>
+          <div className="text-texts-light text-center text-xl leading-9">
+            <p className="tracking-widest font-light">
+              {query.winner} won the game
+            </p>
+            <p className="font-medium">do you want to play again?</p>
           </div>
+          <button
+            type="button"
+            className="bg-primary-light text-white font-medium px-6 shadow-md hover:shadow-lg text-lg py-2 rounded-lg hover:scale-105 duration-300 transition mt-7"
+          >
+            Play again
+          </button>
         </Container>
       </main>
     </div>
