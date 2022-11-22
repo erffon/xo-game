@@ -20,13 +20,21 @@ const Result = () => {
           </div>
           <div className="text-texts-light text-center text-xl leading-9">
             <p className="tracking-widest font-light">
-              {query.winner} won the game
+              <span
+                className={`${
+                  query.winner == "Player1" ? "text-green-600" : "text-redish"
+                } font-bold`}
+              >
+                {query.winner}
+              </span>{" "}
+              won the game
             </p>
             <p className="font-medium">do you want to play again?</p>
           </div>
           <button
             type="button"
             className="bg-primary-light text-white font-medium px-6 shadow-md hover:shadow-lg text-lg py-2 rounded-lg hover:scale-105 duration-300 transition mt-7"
+            onClick={() => push("/playground")}
           >
             Play again
           </button>

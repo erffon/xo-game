@@ -1,6 +1,11 @@
 import { BsMoon } from "react-icons/bs";
 
-function Navbar({ isHome = false }: { isHome?: boolean }) {
+interface NavbarType {
+  isHome?: boolean;
+  onClick?: void;
+}
+
+function Navbar({ isHome = false, onClick }: NavbarType) {
   return (
     <nav className="container flex pt-10 items-center h-1/6 font-inter">
       <div className="flex flex-1 items-center gap-5">

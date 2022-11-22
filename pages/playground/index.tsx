@@ -22,9 +22,11 @@ const Game = () => {
     setXIsNext(!xIsNext);
   };
 
+  const resetGame = () => {};
+
   return (
     <div className="bg-light h-screen">
-      <Navbar />
+      <Navbar onClick={resetGame} />
       <div className="container py-10">
         <Board onClick={handleClick} squares={board} />
         <div className="flex justify-center gap-24 text-slate-400 text-center mt-16">
