@@ -22,7 +22,9 @@ const Game = () => {
     setXIsNext(!xIsNext);
   };
 
-  const resetGame = () => {};
+  const resetGame = () => {
+    setBoard(Array(9).fill(null));
+  };
 
   return (
     <div className="bg-light h-screen">
