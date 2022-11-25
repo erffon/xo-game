@@ -5,12 +5,14 @@ import Navbar from "../components/navbar/Navbar";
 import Container from "../components/Ui/Container";
 
 export default function Home() {
-  const [inputValue, setInputValue] = useState("");
+  const [firstPlayer, setFirstPlayer] = useState("");
+  const [secondPlayer, setSecondPlayer] = useState("");
   const { push } = useRouter();
 
   const saveName = (e: any) => {
-    if (!!inputValue) {
-      window.localStorage.setItem("name", inputValue);
+    if (!!firstPlayer && !!secondPlayer) {
+      window.localStorage.setItem("player1", firstPlayer);
+      window.localStorage.setItem("player2", secondPlayer);
       push("/playground");
     }
   };
@@ -34,15 +36,23 @@ export default function Home() {
           </div>
           <div className="text-texts-light text-center text-xl ">
             <p className="tracking-widest font-light">welcome to XO game</p>
-            <p className="font-medium">please enter your name:</p>
+            <p className="font-medium">please enter Players name:</p>
           </div>
-          <div>
+          <div className="flex justify-center gap-4 flex-col">
             <input
-              onChange={(e) => setInputValue(e.target.value)}
+              onChange={(e) => setFirstPlayer(e.target.value)}
               type="text"
-              name="name"
-              id="name"
-              placeholder="enter your name here"
+              name="name1"
+              id="name1"
+              placeholder="First Player"
+              className="bg-secondary-light outline-none  px-5 py-2 border border-primary-light focus:border-2 focus:shadow-md text-center rounded-lg text-lg text-texts-light"
+            />
+            <input
+              onChange={(e) => setSecondPlayer(e.target.value)}
+              type="text"
+              name="name2"
+              id="name2"
+              placeholder="Second Player"
               className="bg-secondary-light outline-none  px-5 py-2 border border-primary-light focus:border-2 focus:shadow-md text-center rounded-lg text-lg text-texts-light"
             />
           </div>

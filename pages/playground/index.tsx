@@ -34,7 +34,9 @@ const Game = () => {
         <div className="flex justify-center gap-24 text-slate-400 text-center mt-16">
           <div className="flex flex-col gap-1">
             <p className="text-5xl font-inter font-medium">O</p>
-            <p className="text-2xl font-semibold">Player1</p>
+            <p className="text-2xl font-semibold">
+              {window.localStorage.getItem("name")}
+            </p>
           </div>
           <div className="flex flex-col gap-1">
             <p className="text-5xl font-inter font-medium">X</p>
