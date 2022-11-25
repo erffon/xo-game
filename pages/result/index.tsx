@@ -1,9 +1,15 @@
 import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
 import Navbar from "../../components/navbar/Navbar";
 import Container from "../../components/Ui/Container";
 
 const Result = () => {
   const { query, push } = useRouter();
+  const [firstPlayer, setFirstPlayer] = useState<string | null>("");
+
+  useEffect(() => {
+    setFirstPlayer(window.localStorage.getItem("player1"));
+  }, []);
 
   return (
     <div className="bg-light h-screen overflow-hidden font-inter">
@@ -22,7 +28,7 @@ const Result = () => {
             <p className="tracking-widest font-light">
               <span
                 className={`${
-                  query.winner == "Player1" ? "text-green-600" : "text-redish"
+                  query.winner == firstPlayer ? "text-redish" : "text-green-600"
                 } font-bold`}
               >
                 {query.winner}
