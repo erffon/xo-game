@@ -21,7 +21,7 @@ const Game = () => {
     const boardCopy: string[] = [...board];
     //if occupied cell selected or someone won the game
     if (winner || boardCopy[i]) {
-      const winnerPlayer = xIsNext ? "Player2" : "Player1";
+      const winnerPlayer = xIsNext ? firstPlayer : secondPlayer;
       push(`/result?winner=${winnerPlayer}`);
     }
     //put x & o in cells
@@ -41,12 +41,36 @@ const Game = () => {
         <Board onClick={handleClick} squares={board} />
         <div className="flex justify-center gap-24 text-slate-400 text-center mt-16">
           <div className="flex flex-col gap-1">
-            <p className="text-5xl font-inter font-medium">O</p>
-            <p className="text-2xl font-semibold">{firstPlayer}</p>
+            <p
+              className={`text-5xl font-inter font-medium ${
+                !xIsNext ? "text-redish animate-bounce" : ""
+              }`}
+            >
+              O
+            </p>
+            <p
+              className={`text-2xl font-semibold ${
+                !xIsNext ? "text-redish" : ""
+              }`}
+            >
+              {firstPlayer}
+            </p>
           </div>
           <div className="flex flex-col gap-1">
-            <p className="text-5xl font-inter font-medium">X</p>
-            <p className="text-2xl font-semibold">{secondPlayer}</p>
+            <p
+              className={`text-5xl font-inter font-medium ${
+                xIsNext ? "text-primary-light animate-bounce" : ""
+              }`}
+            >
+              X
+            </p>
+            <p
+              className={`text-2xl font-semibold ${
+                xIsNext ? "text-primary-light" : ""
+              }`}
+            >
+              {secondPlayer}
+            </p>
           </div>
         </div>
       </div>
