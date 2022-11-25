@@ -17,11 +17,12 @@ function Navbar({ isHome = false, onClick }: NavbarType) {
         </p>
       </div>
       {/* /* --------------------------------- Buttons -------------------------------- */}
+      {/* About button */}
       <div className="flex flex-1 gap-6 justify-end">
         <button className=" border border-primary-light px-5 py-1 rounded-lg text-texts-light hover:shadow-md ">
           About
         </button>
-
+        {/* Reset Button */}
         {!isHome && (
           <button
             className="px-5 py-1 bg-secondary-light rounded-lg text-texts-light border border-borders hover:shadow-md"
@@ -30,9 +31,10 @@ function Navbar({ isHome = false, onClick }: NavbarType) {
             Reset
           </button>
         )}
-        <div className="flex w-10 h-10 rounded-full border border-borders justify-center items-center bg-secondary-light cursor-pointer hover:shadow-md">
+        {/* Dark mode button */}
+        {/* <div className="flex w-10 h-10 rounded-full border border-borders justify-center items-center bg-secondary-light cursor-pointer hover:shadow-md">
           <BsMoon className="text-xl text-texts-light" />
-        </div>
+        </div> */}
       </div>
     </nav>
   );
