@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { MouseEventHandler } from "react";
 import { BsMoon } from "react-icons/bs";
 
@@ -7,6 +8,11 @@ interface NavbarType {
 }
 
 function Navbar({ isHome = false, onClick }: NavbarType) {
+  const { push } = useRouter();
+  const homeButtonHandler = () => {
+    push("./");
+  };
+
   return (
     <nav className="container flex pt-10 items-center h-1/6 font-inter">
       <div className="flex flex-1 items-center gap-5">
@@ -19,8 +25,11 @@ function Navbar({ isHome = false, onClick }: NavbarType) {
       {/* /* --------------------------------- Buttons -------------------------------- */}
       {/* About button */}
       <div className="flex flex-1 gap-6 justify-end">
-        <button className=" border border-primary-light px-5 py-1 rounded-lg text-texts-light hover:shadow-md ">
-          About
+        <button
+          onClick={homeButtonHandler}
+          className=" border border-primary-light px-5 py-1 rounded-lg text-texts-light hover:shadow-md "
+        >
+          Home
         </button>
         {/* Reset Button */}
         {!isHome && (
