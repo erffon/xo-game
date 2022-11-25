@@ -1,8 +1,9 @@
+import { MouseEventHandler } from "react";
 import { BsMoon } from "react-icons/bs";
 
 interface NavbarType {
   isHome?: boolean;
-  onClick?: void;
+  onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
 }
 
 function Navbar({ isHome = false, onClick }: NavbarType) {
@@ -22,7 +23,10 @@ function Navbar({ isHome = false, onClick }: NavbarType) {
         </button>
 
         {!isHome && (
-          <button className="px-5 py-1 bg-secondary-light rounded-lg text-texts-light border border-borders hover:shadow-md">
+          <button
+            className="px-5 py-1 bg-secondary-light rounded-lg text-texts-light border border-borders hover:shadow-md"
+            onClick={onClick}
+          >
             Reset
           </button>
         )}

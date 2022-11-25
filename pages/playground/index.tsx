@@ -33,11 +33,11 @@ const Game = () => {
         <Board onClick={handleClick} squares={board} />
         <div className="flex justify-center gap-24 text-slate-400 text-center mt-16">
           <div className="flex flex-col gap-1">
-            <p className="text-5xl font-inter font-medium">X</p>
+            <p className="text-5xl font-inter font-medium">O</p>
             <p className="text-2xl font-semibold">Player1</p>
           </div>
           <div className="flex flex-col gap-1">
-            <p className="text-5xl font-inter font-medium">O</p>
+            <p className="text-5xl font-inter font-medium">X</p>
             <p className="text-2xl font-semibold">Player2</p>
           </div>
         </div>
