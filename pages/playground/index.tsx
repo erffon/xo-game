@@ -17,12 +17,18 @@ const Game = () => {
     setSecondPlayer(window.localStorage.getItem("player2"));
   }, []);
 
-  const handleClick = (i: number) => {
-    const boardCopy: string[] = [...board];
-    //if occupied cell selected or someone won the game
-    if (winner || boardCopy[i]) {
+  const boardCopy: string[] = [...board];
+  //if occupied cell selected or someone won the game
+  useEffect(() => {
+    if (winner) {
       const winnerPlayer = xIsNext ? firstPlayer : secondPlayer;
       push(`/result?winner=${winnerPlayer}`);
+    }
+  }, [xIsNext]);
+
+  const handleClick = (i: number) => {
+    if (winner || boardCopy[i]) {
+      return;
     }
     //put x & o in cells
     boardCopy[i] = xIsNext ? "X" : "O";
